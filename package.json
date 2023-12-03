@@ -1,0 +1,64 @@
+{
+  "_args": [
+    [
+      "nuggies@1.2.5",
+      "/home/runner/dropdown-roles-example-1"
+    ]
+  ],
+  "_from": "nuggies@1.2.5",
+  "_id": "nuggies@1.2.5",
+  "_inBundle": false,
+  "_integrity": "sha512-VZvFo7/+FRFVwTXEQpgP9uw6KFhRYj+xD74NQ4n0hPUkxncnRpohTWtcCD5nXTcwqoQ2ycq6XL6uLBYe6xJOQw==",
+  "_location": "/nuggies",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "nuggies@1.2.5",
+    "name": "nuggies",
+    "escapedName": "nuggies",
+    "rawSpec": "1.2.5",
+    "saveSpec": null,
+    "fetchSpec": "1.2.5"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nuggies/-/nuggies-1.2.5.tgz",
+  "_spec": "1.2.5",
+  "_where": "/home/runner/dropdown-roles-example-1",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Nuggies-bot/nuggies-npm/issues"
+  },
+  "dependencies": {
+    "discord-buttons": "github:AngeloCore/discord-buttons#dev",
+    "discord.js": "^12.5.3",
+    "mongoose": "^5.12.14",
+    "ms": "^2.1.2"
+  },
+  "description": "A utility package for Discord Bots!",
+  "homepage": "https://github.com/Nuggies-bot/nuggies-npm#readme",
+  "keywords": [
+    "discord",
+    "discord.js",
+    "discord-giveaways",
+    "giveaways",
+    "discord-buttons",
+    "buttons",
+    "buttons-discord",
+    "button-roles",
+    "discord-button-roles"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "nuggies",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nuggies-bot/nuggies-npm.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.2.5"
+}
