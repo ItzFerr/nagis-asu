@@ -43,7 +43,7 @@ class dropdownroles {
       dropdownsOptions.push(new MessageMenuOption()
         .setEmoji(buttonObject.emoji)
         .setLabel(buttonObject.label)
-        .setValue(buttonObject.role)
+        .setValue(buttonObject.role))
     }
 
     const dropdown = new MessageMenu()
