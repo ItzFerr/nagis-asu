@@ -44,13 +44,12 @@ class dropdownroles {
         .setEmoji(buttonObject.emoji)
         .setLabel(buttonObject.label)
         .setValue(buttonObject.role)
-        .setDescription(`klik disini untuk mendapatkan role ${message.guild.roles.cache.get(buttonObject.role).name}!`));
     }
 
     const dropdown = new MessageMenu()
       .addOptions(dropdownsOptions)
       .setID('dr')
-      .setPlaceholder('Klik Disini')
+      .setPlaceholder('Klik menu ini untuk memilih role.')
       .setMinValues(1) // Set minimum values that can be selected
       .setMaxValues(dropdownsOptions.length); // Set maximum values that can be selected
 
