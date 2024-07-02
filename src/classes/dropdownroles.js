@@ -43,14 +43,14 @@ class dropdownroles {
       dropdownsOptions.push(new MessageMenuOption()
         .setEmoji(buttonObject.emoji)
         .setLabel(buttonObject.label)
-        .setValue(buttonObject.role))
+        .setValue(buttonObject.role));
     }
 
     const dropdown = new MessageMenu()
       .addOptions(dropdownsOptions)
       .setID('dr')
       .setPlaceholder('Klik menu ini untuk memilih role.')
-      .setMinValues(1) // Set minimum values that can be selected
+      .setMinValues(0) // Allow users to select no values
       .setMaxValues(dropdownsOptions.length); // Set maximum values that can be selected
 
     const row = new MessageActionRow().addComponent(dropdown);
