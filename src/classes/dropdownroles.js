@@ -30,33 +30,38 @@ class dropdownroles {
    * @param {Message} message - The Discord Message
    * @param {String} content - The Discord send data, can be an embed or string
    * @param {String} role - The role ID of the role
-   * @param {String} channelID - The channel ID that will be recieving the dropdown
+   * @param {String} channelID - The channel ID that will be receiving the dropdown
    */
   static async create({ message, content, role, channelID }) {
-    if ((message instanceof Message) == false) throw new TypeError('please provide the Discord Message');
+    if (!(message instanceof Message)) throw new TypeError('please provide the Discord Message');
     if (!content) throw new Error('please provide content!');
     if (!role) throw new Error('role not provided!');
     if (!channelID) throw new Error('channelID not provided!');
 
-    const dropdownsOptions = [];
-    for (const buttonObject of role.roles) {
-      dropdownsOptions.push(new MessageMenuOption()
-        .setEmoji(buttonObject.emoji)
-        .setLabel(buttonObject.label)
-        .setValue(buttonObject.role));
+    const dropdownOptions = [];
+    for (const roleObject of role.roles) {
+      dropdownOptions.push(
+        new MessageMenuOption()
+          .setLabel(roleObject.label)
+          .setEmoji(roleObject.emoji)
+          .setValue(roleObject.role)
+      );
     }
 
     const dropdown = new MessageMenu()
-      .addOptions(dropdownsOptions)
-      .setID('dr')
+      .addOptions(dropdownOptions)
+      .setID('dropdown-roles')
       .setPlaceholder('Klik menu ini untuk memilih role.')
-      .setMinValues(0) // Allow users to select no values
-      .setMaxValues(dropdownsOptions.length); // Set maximum values that can be selected
+      .setMinValues(0) // Allow no selection
+      .setMaxValues(dropdownOptions.length); // Set maximum values that can be selected
 
     const row = new MessageActionRow().addComponent(dropdown);
-    content instanceof MessageEmbed
-      ? message.client.channels.cache.get(channelID).send({ embed: content, components: [row] })
-      : message.client.channels.cache.get(channelID).send(content, { components: [row] });
+
+    if (content instanceof MessageEmbed) {
+      await message.client.channels.cache.get(channelID).send({ embed: content, components: [row] });
+    } else {
+      await message.client.channels.cache.get(channelID).send(content, { components: [row] });
+    }
   }
 }
 
